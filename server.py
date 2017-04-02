@@ -24,8 +24,8 @@ class ThreadedServer():
         size = 1024
         global s
         data=client.recv(1024)
-        self.broadcast(client,data+" entered the chatroom")
-        client.send("Start Chatting..")
+        self.broadcast(client,data+" just entered the chatroom \n")
+        client.send("Start Chatting.. \n")
         while True:
             self.read_sockets,write_sockets,error_sockets = select.select(self.connections,[],[])
             for sock in self.read_sockets:
@@ -34,8 +34,8 @@ class ThreadedServer():
                     if data:
                         self.broadcast(sock, "\r" + data)
                 except:
-                    self.broadcast(sock, data+" is offline")
-                    print data+" is offline"
+                    self.broadcast(sock, data+" is offline \n")
+                    print data+" is offline \n"
                     continue
             
     def broadcast(self,ssocket,msg):
@@ -46,6 +46,6 @@ class ThreadedServer():
                 except:
                     clients.close()
                     self.connections.remove(clients)
-
+                
 if __name__ == "__main__":
     ThreadedServer().listen()
