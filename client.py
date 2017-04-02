@@ -2,7 +2,7 @@ import socket,select
 import sys
 
 def prompt(self) :
-        sys.stdout.write('<You> ')
+        sys.stdout.write('<You>: ')
         sys.stdout.flush()
     
 
