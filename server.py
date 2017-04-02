@@ -46,6 +46,6 @@ class ThreadedServer():
                 except:
                     clients.close()
                     self.connections.remove(clients)
-                
+
 if __name__ == "__main__":
     ThreadedServer().listen()
