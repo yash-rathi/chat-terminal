@@ -23,7 +23,7 @@ if __name__ == "__main__":
     print 'Connected to remote host. Please choose a username'
     name=raw_input(" ")
     s.send(name)
-    sys.stdout.write('<You> ')
+    sys.stdout.write('<You>:')
     sys.stdout.flush()
      
     while 1:
