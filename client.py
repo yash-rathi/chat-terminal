@@ -17,10 +17,10 @@ if __name__ == "__main__":
     try :
         s.connect((host, port))
     except :
-        print 'Unable to connect'
+        print '###Unable to connect to specified server(host,port).###'
         sys.exit()
      
-    print 'Connected to remote host. Please choose a username'
+    print '##Connected to remote host. Please choose a username:'
     name=raw_input(" ")
     s.send(name)
     sys.stdout.write('<You>:')
@@ -35,16 +35,16 @@ if __name__ == "__main__":
             if sock == s:
                 data = sock.recv(4096)
                 if not data :
-                    print '\nDisconnected from chat server'
+                    print '\n####Disconnected from chat server####'
                     sys.exit()
                 else :
                     sys.stdout.write(data)
-                    sys.stdout.write('<You> ')
+                    sys.stdout.write('<You>: ')
         	    sys.stdout.flush()
              
 
             else :
                 msg = sys.stdin.readline()
                 s.send("<"+name+">"+msg)
-		sys.stdout.write('<You> ')
+		sys.stdout.write('<You>: ')
 	        sys.stdout.flush()
