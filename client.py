@@ -5,7 +5,7 @@ def prompt(self) :
         sys.stdout.write('<You> ')
         sys.stdout.flush()
     
-        
+
 if __name__ == "__main__":
      
      
